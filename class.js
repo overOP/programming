@@ -66,3 +66,68 @@ console.log(myRectangle.getArea());
 
 const myRectangle2 = new Rectangle(5,2);
 console.log(myRectangle2.getPerimeter());
+
+class Circle {
+    constructor(radius){
+        this.radius = radius;
+    }
+    getArea(){
+        return Math.PI * this.radius * this.radius;
+    }
+    getPerimeter(){
+        return 2 * Math.PI * this.radius;
+    }
+}   
+
+const myCircle = new Circle(10);
+console.log(myCircle.getArea());
+
+const myCircle2 = new Circle(5);
+console.log(myCircle2.getPerimeter());
+
+
+class BankAccount {
+    constructor(name,balance){
+        this.name = name;
+        this.balance = balance;
+    }
+    deposit(amount){
+        this.balance += amount;
+    }
+    withdraw(amount){
+        this.balance -= amount;
+    }
+    getBalance(){
+        return this.balance;
+    }
+}
+
+const myBankAccount = new BankAccount('pradeep',1000);
+console.log(myBankAccount.getBalance());
+
+myBankAccount.deposit(500);
+console.log(myBankAccount.getBalance());
+
+myBankAccount.withdraw(200);
+console.log(myBankAccount.getBalance());
+
+class Employee {
+    constructor(name,position,salary){
+        this.name = name;
+        this.position = position;
+        this.salary = salary;
+    }   
+    getDetails(){
+        return `Name: ${this.name}, Position: ${this.position}, Salary: ${this.salary}`;
+    }
+    getSalary(){
+        return this.salary;
+    }
+}
+
+const myEmployee = new Employee('pradeep','developer',1000);
+console.log(myEmployee.getDetails());
+
+myEmployee.salary = 2000;
+console.log(myEmployee.getSalary());
+
