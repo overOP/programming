@@ -1,3 +1,32 @@
+//principle of oop
+//1. encapsulation
+//encapsulation is the process of binding the data and the methods that operate on the data together
+//it is the process of hiding the implementation details of a class from the outside world
+
+//2. inheritance
+//inheritance is the process of creating a new class from an existing class
+//it is the process of creating a new class from an existing class  
+
+//3. polymorphism
+//polymorphism is the process of having multiple forms
+//it is the process of having multiple forms
+
+//4. abstraction
+//abstraction is the process of hiding the implementation details of a class from the outside world
+//it is the process of hiding the implementation details of a class from the outside world
+
+
+
+
+
+
+//class is a blueprint for creating objects
+//it is a collection of properties and methods
+//it is a template for creating objects
+//it is a blueprint for creating objects
+//it is a collection of properties and methods
+//it is a template for creating objects
+//it is a blueprint for creating objects
 class id {
     constructor(name,age,city){ 
         //this is used to refer to the current object
