@@ -28,6 +28,7 @@
 //it is a template for creating objects
 //it is a blueprint for creating objects
 class id {
+    //constructor is a special method that is called when a new object is created
     constructor(name,age,city){ 
         //this is used to refer to the current object
         this.name = name;
