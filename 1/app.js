@@ -4,23 +4,23 @@ class UserList {
         this.name = ''
         this.gmail = ''
         this.nameField = document.getElementById('name')
-        this.gamilField = document.getElementById('gmail')
+        this.gmailField = document.getElementById('email')  // fixed
         this.submitButton = document.getElementById('submitBtn')
         this.resultBox = document.getElementById('result')
-        this.initalizeEvents()
+        this.initializeEvents()
     }
-  
-    initalizeEvents() {
+
+    initializeEvents() {
         this.submitButton.addEventListener('click', () => this.getUserInputs())
     }
-  
+
     getUserInputs() {
         this.name = this.nameField.value
-        this.gmail = this.gamilField.value
+        this.gmail = this.gmailField.value
         this.users.push({ name: this.name, gmail: this.gmail })
         this.displayResult()
     }
-  
+
     displayResult() {
         const ulComp = document.createElement('ul')
         this.users.forEach(item => {
@@ -31,6 +31,6 @@ class UserList {
         this.resultBox.innerHTML = ""
         this.resultBox.appendChild(ulComp)
     }
-  }
-  
-  document.addEventListener('DOMContentLoaded', new UserList())
+}
+
+document.addEventListener('DOMContentLoaded', () => new UserList()) // fixed

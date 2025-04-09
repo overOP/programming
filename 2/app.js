@@ -1,33 +1,37 @@
-
-//2
 class ProductList {
-    constructor(formId) {
-      this.form = document.getElementById(formId);
-      this.products = [];
-  
-      this.form.addEventListener('submit', this.handleSubmit.bind(this));
-    }
-  
-    handleSubmit(event) {
-      event.preventDefault(); //it is used to prevent the default form submission behavior
-      const name = this.form.querySelector('#productName').value;
-      const price = parseFloat(this.form.querySelector('#productPrice').value);
-  
-      const product = { name, price };
-      this.products.push(product);
-  
-      this.showProducts();
-      this.form.reset(); // Clear form after submission
-    }
-  
-    showProducts() {
-      let message = 'Product List:\n';
-      this.products.forEach((product, index) => {
-        message += `${index + 1}. ${product.name} - $${product.price}\n`;
-      });
-      alert(message);
-    }
+  constructor() {
+    this.users = [];
+    this.name = '';
+    this.number = '';
+    this.nameField = document.getElementById('name');
+    this.numberField = document.getElementById('number');
+    this.submitButton = document.getElementById('submitBtn');
+    this.resultBox = document.getElementById('result');
+    
+    this.initializeEvents();
   }
-  
-  // Initialize ProductList with the form
-  new ProductList('productForm');
+
+  initializeEvents() {
+    this.submitButton.addEventListener('click', () => this.getUserInputs());
+  }
+
+  getUserInputs() {
+    this.name = this.nameField.value;
+    this.number = this.numberField.value;
+    this.users.push({ name: this.name, number: this.number });
+    this.displayResult();
+  }
+
+  displayResult() {
+    const ulComp = document.createElement('ul');
+    this.users.forEach(item => {
+      const liComp = document.createElement('li');
+      liComp.innerHTML = `Name: ${item.name}, Number: ${item.number}`;
+      ulComp.appendChild(liComp);
+    });
+
+    this.resultBox.innerHTML = '';
+    this.resultBox.appendChild(ulComp);
+  }
+}
+document.addEventListener('DOMContentLoaded', () => new ProductList());

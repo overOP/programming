@@ -38,4 +38,4 @@ class UserList {
   }
 }
 
-document.addEventListener('DOMContentLoaded', new UserList())
+document.addEventListener('DOMContentLoaded',() => new UserList())
